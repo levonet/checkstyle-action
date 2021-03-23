@@ -39,8 +39,9 @@ Default is `false`.
 Optional. Tool name to use for reviewdog reporter.
 Default is 'reviewdog'.
 
-### `workdir`
-Optional. Working directory relative to the root directory.
+### `files`
+Optional. Files or directories which to be checked.
+Default is `.`.
 
 ### `properties_file`
 Optional. Properties file relative to the root directory.
