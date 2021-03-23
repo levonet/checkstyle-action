@@ -8,11 +8,19 @@ if [ -n "${INPUT_PROPERTIES_FILE}" ]; then
   OPT_PROPERTIES_FILE="-p ${INPUT_PROPERTIES_FILE}"
 fi
 
-exec java -jar /checkstyle.jar \
-    -c "${INPUT_CHECKSTYLE_CONFIG}" 
+env | sort
+
+echo java -jar /checkstyle.jar \
+    -c "${INPUT_CHECKSTYLE_CONFIG}" \
     ${OPT_PROPERTIES_FILE} \
     -f xml \
-    "${INPUT_FILES}" \
+    "${INPUT_FILES}"
+
+exec java -jar /checkstyle.jar \
+    -c "${INPUT_CHECKSTYLE_CONFIG}" \
+    ${OPT_PROPERTIES_FILE} \
+    -f xml \
+    ${INPUT_FILES} \
     | reviewdog -f=checkstyle \
         -name="${INPUT_TOOL_NAME}" \
         -reporter="${INPUT_REPORTER:-github-pr-check}" \
