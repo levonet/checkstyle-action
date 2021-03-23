@@ -15,10 +15,10 @@ inputs:
     description: 'Reporter of reviewdog command [github-pr-check,github-pr-review]'
     default: 'github-pr-check'
   filter_mode:
-      description: |
-        Filtering for the reviewdog command [added,diff_context,file,nofilter].
-        Default is `added`.
-      default: 'added'
+    description: |
+      Filtering for the reviewdog command [added,diff_context,file,nofilter].
+      Default is `added`.
+    default: 'added'
   fail_on_error:
     description: |
       Exit code for reviewdog when errors are found [true,false]
@@ -33,7 +33,7 @@ inputs:
     default: '.'
   tool_name:
     description: 'Tool name to use for reviewdog reporter'
-    default: 'reviewdog'
+    default: 'checkstyle'
   properties_file:
     description: 'Properties file relative to the root directory.'
     default: ''
