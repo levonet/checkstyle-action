@@ -1,42 +1,45 @@
 # action.yml
-name: 'Run java checkstyle'
-description: 'Run java checkstyle with reviewdog'
+name: Run java checkstyle
+description: Run java checkstyle with reviewdog
 branding:
-  icon: 'code'  
-  color: 'red'
+  icon: code  
+  color: red
 inputs:
   github_token:
-    description: 'GITHUB_TOKEN.'
-    default: '${{ github.token }}'
+    description: GITHUB_TOKEN.
+    default: ${{ github.token }}
   level:
-    description: 'Report level for reviewdog [info,warning,error]'
-    default: 'info'
+    description: Report level for reviewdog [info,warning,error]
+    default: info
   reporter:
-    description: 'Reporter of reviewdog command [github-pr-check,github-pr-review]'
-    default: 'github-pr-check'
+    description: Reporter of reviewdog command [github-pr-check,github-pr-review]
+    default: github-pr-check
   filter_mode:
     description: |
       Filtering for the reviewdog command [added,diff_context,file,nofilter].
       Default is `added`.
-    default: 'added'
+    default: added
   fail_on_error:
     description: |
       Exit code for reviewdog when errors are found [true,false]
       Default is `false`.
     default: 'false'
   checkstyle_config:
-    description: 'Checkstyle config file'
+    description: Checkstyle config file
     required: true
-    default: 'google_checks.xml'
+    default: google_checks.xml
+  flags:
+    description: Checkstyle optional flags.
+    default: ''
   files:
-    description: 'Files or directories which to be checked.'
+    description: Files or directories which to be checked.
     default: '.'
   tool_name:
-    description: 'Tool name to use for reviewdog reporter'
-    default: 'checkstyle'
+    description: Tool name to use for reviewdog reporter
+    default: checkstyle
   properties_file:
-    description: 'Properties file relative to the root directory.'
+    description: Properties file relative to the root directory.
     default: ''
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: Dockerfile
