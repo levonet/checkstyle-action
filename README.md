@@ -39,6 +39,9 @@ Default is `false`.
 Optional. Tool name to use for reviewdog reporter.
 Default is 'reviewdog'.
 
+### `flags`
+Optional. Checkstyle optional flags.
+
 ### `files`
 Optional. Files or directories which to be checked.
 Default is `.`.

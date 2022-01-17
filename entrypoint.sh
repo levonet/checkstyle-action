@@ -12,6 +12,7 @@ exec java -jar /checkstyle.jar \
     -c "${INPUT_CHECKSTYLE_CONFIG}" \
     ${OPT_PROPERTIES_FILE} \
     -f xml \
+    ${INPUT_FLAGS} \
     ${INPUT_FILES} \
     | reviewdog -f=checkstyle \
         -name="${INPUT_TOOL_NAME}" \
